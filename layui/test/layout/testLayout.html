@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>table模块快速使用</title>
+  <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+</head>
+
+<body>
+  <form class="layui-form" action="">
+    <div class="layui-form-item">
+      <label class="layui-form-label">日志级别</label>
+      <div class="layui-input-inline">
+        <select id="level" name="level" lay-verify="required">
+          <option value=""></option>
+          <option value="getAllInfo">INFO</option>
+          <option value="getAllDebug">DEBUG</option>
+          <option value="getAllWarn">WARN</option>
+          <option value="getAllError">ERROR</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-inline">
+      <!-- 注意：这一层元素并不是必须的 -->
+      <input type="text" class="layui-input" id="test1" name="date">
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+    </div>
+
+  </form>
+  <table id="demo" lay-filter="test"></table>
+
+  <script src="../../layui/layui.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+  <script>
+    layui.use(['table', 'laydate', 'form'], function () {
+      var table = layui.table;
+
+      //第一个实例
+      table.render({
+        elem: '#demo'
+        , height: 312
+        , url: 'http://localhost:10000/getAllInfo' //数据接口
+        , page: true //开启分页
+        , cols: [[ //表头
+          { field: 'level', title: 'name', width: 80, sort: true, fixed: 'left' }
+          , { field: 'loggerName', title: '密码', width: 400 }
+          , { field: 'message', title: '密码', width: 400 }
+          , { field: 'date', title: '密码', width: 400, sort: true, }
+
+        ]]
+      });
+
+      var laydate = layui.laydate;
+
+      //执行一个laydate实例
+      laydate.render({
+        elem: '#test1' //指定元素
+      });
+
+      var form = layui.form;
+
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+      });
+    });
+
+  </script>
+</body>
+
+</html>

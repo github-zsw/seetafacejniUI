@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>table模块快速使用</title>
+  <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+</head>
+<body>
+ 
+<table id="demo" lay-filter="test"></table>
+ 
+<script src="../layui/layui.js"></script>
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  
+  //第一个实例
+  table.render({
+    elem: '#demo'
+    ,height: 312
+    ,url: 'http://localhost:10000/getAllInfo' //数据接口
+    ,page: true //开启分页
+    ,cols: [[ //表头
+      {field: 'level', title: 'name', width:80, sort: true, fixed: 'left'}
+      ,{field: 'loggerName', title: '密码', width:400}
+      ,{field: 'message', title: '密码', width:400}
+      ,{field: 'date', title: '密码', width:400,sort: true,}
+
+    ]]
+  });
+  
+});
+</script>
+</body>
+</html>

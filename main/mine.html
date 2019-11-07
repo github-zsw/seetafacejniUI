@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>我购买的产品 - Fly社区</title><link rel="stylesheet" href="//at.alicdn.com/t/font_24081_qs69ykjbea.css">
+        <link rel="stylesheet" href="//res.layui.com/layui/dist/css/layui.css?t=1573008022667">
+        <link rel="stylesheet" href="//res.layui.com/static/css/fly/global.css?t=15730080226676" charset="utf-8">
+        </head><body><div class="fly-header layui-bg-black"> 
+             <div class="layui-container">  
+                   <a class="fly-logo" href="/">   
+                <img src="//res.layui.com/static/images/fly/logo.png" alt="layui">  
+                  </a>    
+                  <ul class="layui-nav fly-nav layui-hide-xs">    
+                        <li class="layui-nav-item">      
+                              <a href="/"><i class="iconfont icon-jiaoliu"></i>交流</a>   
+                                 </li>      
+                        <li class="layui-nav-item">      
+                                       <a href="javascript:;">
+                                           <i class="iconfont icon-chanpin" style="top: 1px;"></i>专区</a>  
+                            <dl class="layui-nav-child fly-nav-child">        
+                            <dd><a href="/vipclub/list/layuiadmin/">layuiAdmin</a></dd>          
+                            <hr>          
+                            <dd><a href="/vipclub/list/layim/">LayIM</a></dd>
+                            </dl>        <span class="layui-badge-dot" style="margin: -5px 10px 0; right: 0;"></span>
+                        </li>      
+                        <li class="layui-nav-item">        
+                            <a href="http://www.layui.com/"><i class="iconfont icon-ui"></i>框架</a>      
+                            </li>    
+                    </ul>    
+                    <ul class="layui-nav fly-nav-user">              
+                        <li class="layui-nav-item">          <a class="fly-nav-avatar" href="/user/" id="LAY_header_avatar">         
+                           <cite class="layui-hide-xs">Rorschach928</cite>                                   
+                            <img src="//thirdqq.qlogo.cn/g?b=oidb&k=wfx1ibichteHvDQFELgwYWVg&s=100&t=1561939162">          </a>       
+                               <dl class="layui-nav-child">            <dd><a href="/user/">用户中心</a></dd>     
+                                      <dd><a href="/user/set/">基本设置</a></dd>            <hr>          
+                                        <dd><a href="/user/message/">我的消息</a></dd>                     
+                                           <dd><a href="/user/product/">已购产品</a></dd>           
+                                            <dd><a href="/u/45072216">我的主页</a></dd>           
+                                             <hr style="margin: 5px 0;">          
+                                               <dd><a href="/user/logout/" style="text-align: center;">退出</a></dd>   
+                                                      </dl>        
+                            </li>          
+                    </ul>  
+                    
+            </div>
+        </div>
+        <div class="layui-container fly-marginTop fly-user-main">  
+            <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user">  
+                <li class="layui-nav-item">    
+                    <a href="/u/45072216/">      <i class="layui-icon">&#xe68e;</i>      我的主页    </a>  
+                    </li>  
+                <li class="layui-nav-item ">    <a href="/user/">      <i class="layui-icon">&#xe612;</i>      用户中心    </a>  </li>
+                <li class="layui-nav-item ">    <a href="/user/set/">      <i class="layui-icon">&#xe620;</i>      基本设置    </a>  </li>  
+                <li class="layui-nav-item ">    <a href="/user/post/">      <i class="iconfont icon-tiezi"></i>      我的帖子    </a>  </li>  
+                <li class="layui-nav-item ">    <a href="/user/message/">      <i class="layui-icon">&#xe611;</i>      我的消息    </a>  </li>  
+                <li class="layui-nav-item layui-this">    <a href="/user/product/">      <i class="iconfont icon-chanpin"></i>      已购产品    </a>  </li>  
+                <li class="layui-nav-item ">    <a href="/user/extend/">      <i class="layui-icon layui-icon-component"></i>      我的组件 
+                   </a>  </li>
+            </ul>
+            <div class="site-tree-mobile layui-hide">  <i class="layui-icon">&#xe602;</i></div><div class="site-mobile-shade"></div>  
+            <div class="fly-panel fly-panel-user" pad20>    
+                <div class="layui-tab layui-tab-brief" lay-filter="user">      
+                    <ul class="layui-tab-title">                  
+                        <li class="layui-this"><a href="/user/product/">我购买的产品</a></li>                
+                        <!--<li><a href="/store" target="_blank">应用商店</a></li>-->      
+                    </ul>      
+                    <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 5px 0;">        
+                    <div class="layui-tab-item layui-show">          
+                        <form action="" class="layui-form">            
+                            <div class="layui-form-item" style="margin: 10px 0 0;">              
+                                <label class="layui-form-label" style="width: auto; padding-right: 5px;">别名筛选：</label>              
+                                <div class="layui-input-inline">                
+                                    <input type="text" name="alias" class="layui-input" value="">              
+                                </div>              
+                                <button type="submit" class="layui-btn">搜索</button>           
+                            </div>          
+                        </form>          
+                        <table id="LAY_productList"></table>        
+                    </div>      
+                </div>    
+            </div>  
+        </div>
+    </div>
+    <div class="fly-footer">  
+        <p><a href="http://fly.layui.com/">Fly 社区</a> 2019 &copy; <a href="http://www.layui.com/">layui.com</a></p>  
+        <p>    
+            <a href="http://fly.layui.com/jie/3147/" target="_blank">付费计划</a>    
+            <a href="/extend/" target="_blank">组件平台</a>    
+            <a href="/store/" target="_blank">模板市场</a>    
+            <a href="/case/2019/" target="_blank">年度案例</a>    
+            <a href="http://fly.layui.com/jie/2461/" target="_blank">公众号</a>  
+        </p>  
+        <div class="fly-union">    
+            <p style="display: block; margin-bottom: 10px;"><span>感谢以下平台提供云加速支持</span><p>    
+            <a href="https://console.upyun.com/register/?invite=SJ0wu6g2-" target="_blank" rel="nofollow" sponsor="upyun">      
+                <img src="//res.layui.com/static/images/other/upyun.png?t=1">    
+            </a>    
+            <a href="https://www.maoyuncloud.com/?from=layui" target="_blank" rel="nofollow" sponsor="maoyun">      
+                <img src="//cdn.layui.com/upload/2019_5/168_1559291577683_9348.png">    
+            </a>  
+        </div>
+    </div>
+    <script src="//res.layui.com/layui/dist/layui.js?t=1573008022667"></script>
+    <script>
+    layui.cache.page = 'user';
+    layui.cache.user = {  username: 'Rorschach928'  ,uid: 45072216  ,avatar: '//thirdqq.qlogo.cn/g?b=oidb&k=wfx1ibichteHvDQFELgwYWVg&s=100&t=1561939162'  ,experience: 20  ,sum: 0  ,vip: 0  ,sex: ''};
+    layui.config({  version: "1573008022667"}).extend({  'fly': '//res.layui.com/static/lay/modules/fly/index'}).use('fly');
+    </script> 
+    <script>var _hmt = _hmt || [];
+    (function() {  
+        var hm = document.createElement("script");  
+        hm.src = "https://hm.baidu.com/hm.js?d214947968792b839fd669a4decaaffc"; 
+        var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);})();</script><script>  layui.data.alias = '';</script></body></html>
